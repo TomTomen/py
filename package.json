@@ -1,6 +1,9 @@
-"dependencies": {
-  "Flask": "^2.2.2"
-}
-"scripts": {
-  "start": "python main.py"
+{
+  "dependencies": {
+    "Flask": "^2.2.2",
+    "plotly": "^5.0.0"
+  },
+  "scripts": {
+    "start": "python main.py"
+  }
 }
