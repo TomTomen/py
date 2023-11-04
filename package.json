@@ -1,3 +1,6 @@
+"dependencies": {
+  "Flask": "^2.2.2"
+}
 "scripts": {
   "start": "python main.py"
 }
