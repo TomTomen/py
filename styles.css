@@ -1,0 +1,48 @@
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  animation: stars 50s linear infinite;
+}
+
+@keyframes stars {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #000; /* Белые звезды */
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+/* Генерация случайных координат и размеров звезд */
+@for $i from 1 through 100 {
+  .star:nth-child(#{$i}) {
+    top: random(100) + vh; /* Случайное положение по вертикали */
+    left: random(100) + vw; /* Случайное положение по горизонтали */
+    animation-duration: random(2) + 1s; /* Случайная продолжительность мерцания */
+  }
+}
